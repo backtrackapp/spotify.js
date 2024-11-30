@@ -112,7 +112,7 @@ export class MeManager extends Manager {
 
     const json = res.data;
 
-    return json as PlayerState; 
+    return json as PlayerState;
   }
 
   /**
