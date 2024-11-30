@@ -104,6 +104,18 @@ export class MeManager extends Manager {
   }
 
   /**
+   * @description Get the object currently being played on the user's Spotify account.
+   * @returns {Promise} Returns a promise with the current playing information.
+   */
+  async getCurrentlyPlayingTrack(): Promise<PlayerState> {
+    const res = await this.http.get(`/v1/me/player/currently-playing`);
+
+    const json = res.data;
+
+    return json as PlayerState; 
+  }
+
+  /**
    * @description Check if one or more tracks is saved in the current user's library. (required scropes: user-library-read).
    * @returns {Promise<boolean[]>} Returns a promise with the an array of booleans.
    */
