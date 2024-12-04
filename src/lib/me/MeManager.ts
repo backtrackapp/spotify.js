@@ -110,9 +110,7 @@ export class MeManager extends Manager {
   async getCurrentlyPlayingTrack(): Promise<PlayerState> {
     const res = await this.http.get(`/v1/me/player/currently-playing`);
 
-    const json = res.data;
-
-    return json as PlayerState;
+    return res.data as PlayerState;
   }
 
   /**
